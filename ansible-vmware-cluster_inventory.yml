@@ -2,6 +2,7 @@
 # https://github.com/ansible-collections/community.vmware/blob/main/docs/community.vmware.vmware_cluster_info_module.rst
 - name: Gather cluster info from given datacenter
   hosts: all
+  gather_facts: false
   tasks:
   - name: Get cluster info 
     community.vmware.vmware_cluster_info:
