@@ -2,7 +2,7 @@
 - name: Gather cluster info from given datacenter
   hosts: all
   gather_facts: false
-  vars_files: vars
+  #  vars_files: vars
   tasks:
   - name: Get cluster info
     community.vmware.vmware_cluster_info:
