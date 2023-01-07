@@ -1,0 +1,18 @@
+---
+# https://github.com/ansible-collections/community.vmware/blob/main/docs/community.vmware.vmware_cluster_info_module.rst
+- name: Gather cluster info from given datacenter
+  hosts: all
+  tasks:
+  - name: Get cluster info 
+    community.vmware.vmware_cluster_info:
+#      hostname: '{{ vcenter_hostname }}'
+#      username: '{{ vcenter_username }}'
+#      password: '{{ vcenter_password }}'
+       datacenter: '{{ vcenter_dc }}'
+    delegate_to: localhost
+    register: cluster_info
+    
+  - name: Print cluster info 
+    debug:
+      msg: '{{ cluster_info }}' 
+  
