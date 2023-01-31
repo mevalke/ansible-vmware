@@ -1,5 +1,5 @@
 ---
-hosts: vmware_hosts
+hosts: all
 gather_facts: false
 tasks:
 - name: Add a VMware vSwitch
