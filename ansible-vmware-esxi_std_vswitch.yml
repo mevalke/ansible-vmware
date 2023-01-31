@@ -1,0 +1,15 @@
+---
+hosts: vmware_hosts
+gather_facts: false
+tasks:
+- name: Add a VMware vSwitch
+  community.vmware.vmware_vswitch:
+    hostname: '{{ esxi_hostname }}'
+    username: '{{ esxi_username }}'
+    password: '{{ esxi_password }}'
+    switch: '{{ esxi_vswitch }}'
+    nics:
+    - vmnic0
+    - vmnic1
+    validate_certs: false
+  delegate_to: localhost
