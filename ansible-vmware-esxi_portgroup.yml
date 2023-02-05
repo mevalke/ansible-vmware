@@ -9,6 +9,7 @@
       hostname: "{{ esxi_hostname }}"
       username: "{{ esxi_username }}"
       password: "{{ esxi_password }}"
+      esxi_hostname: "{{ inventory_hostname }}"
       switch: "{{ item.vswitch_name }}"
       portgroup: "{{ item.portgroup_name }}"
       vlan_id: "{{ item.vlan_id }}"
