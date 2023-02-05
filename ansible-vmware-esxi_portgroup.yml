@@ -13,5 +13,6 @@
       switch: "{{ item.vswitch_name }}"
       portgroup: "{{ item.portgroup_name }}"
       vlan_id: "{{ item.vlan_id }}"
+      validate_certs: false
     delegate_to: localhost
     loop: "{{ esxi_portgroups }}"
