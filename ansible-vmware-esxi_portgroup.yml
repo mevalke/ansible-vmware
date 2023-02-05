@@ -1,0 +1,11 @@
+---
+# https://github.com/ansible-collections/community.vmware/blob/main/docs/community.vmware.vmware_portgroup_module.rst
+- name: Add Management Network VM Portgroup
+  community.vmware.vmware_portgroup:
+    hostname: "{{ esxi_hostname }}"
+    username: "{{ esxi_username }}"
+    password: "{{ esxi_password }}"
+    switch: "{{ vswitch_name }}"
+    portgroup: "{{ portgroup_name }}"
+    vlan_id: "{{ vlan_id }}"
+  delegate_to: localhost
