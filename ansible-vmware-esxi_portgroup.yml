@@ -15,5 +15,5 @@
       vlan_id: "{{ item.id }}"
       validate_certs: false
     delegate_to: localhost
-    loop: "{{ global_vlans | selectattr('tagged','==',true) | list }}"
+    loop: "{{ global_vlans | selectattr('tagged','==',true) | selectattr('mgmt','==',false) | list }}"
 
