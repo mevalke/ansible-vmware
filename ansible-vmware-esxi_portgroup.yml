@@ -15,4 +15,4 @@
       vlan_id: "{{ item.id }}"
       validate_certs: false
     delegate_to: localhost
-    loop: "{{ global_vlans }}"
+    loop: "{{ global_tagged_vlans }}"
