@@ -1,15 +1,16 @@
 ---
 # https://github.com/ansible-collections/community.vmware/blob/main/docs/community.vmware.vmware_portgroup_module.rst
 - name: Add VM portgroups
-  hosts: all
+  hosts: esxi
   gather_facts: false
+  vars_files: vars.yml
   tasks:
   - name: Add a portgroup
     community.vmware.vmware_portgroup:
-      hostname: "{{ esxi_hostname }}"
+      hostname: "{{ inventory_hostname }}"
+      hosts: "{{ inventory_hostname }}"
       username: "{{ esxi_username }}"
       password: "{{ esxi_password }}"
-      esxi_hostname: "{{ inventory_hostname }}"
       switch: "{{ item.vswitch }}"
       portgroup: "{{ item.name }}"
       vlan_id: "{{ item.id }}"
